@@ -6,7 +6,7 @@ on:
       - main
   
   schedule:
-      - cron: '*/5 9-22 * * 1-5'
+    - cron: '*/5 9-22 * * 1-5'
 
 jobs:
   build:
@@ -36,7 +36,7 @@ jobs:
           cd backend
           coverage html
 
-      -name: Upload coverage report
+      - name: Upload coverage report
         if: always()
         uses: actions/upload-artifact@v4
         with:
