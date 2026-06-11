@@ -37,7 +37,7 @@ jobs:
         run: |
           cd backend
           python manage.py runserver 0.0.0.0:8000 &
-          sleep 10
+          - run: npx wait-on -t 10000 http://localhost:8000/add/?num1=1&num2=2
       - name: Install StepCI
         run: |
           cd backend
