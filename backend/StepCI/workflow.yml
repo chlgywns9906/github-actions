@@ -1,0 +1,18 @@
+version: "1.1"
+name: sum
+env:
+  baseUrl: http://127.0.0.1:8000
+tests:
+  sum:
+    steps:
+      - name: sum
+        http:
+          url: ${{ env.baseUrl }}/add/
+          method: GET
+          params:
+            num1: 1
+            num2: 2
+          check:
+            status: 200
+            jsonpath:
+              $.result: 3
