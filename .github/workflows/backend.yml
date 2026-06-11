@@ -25,3 +25,10 @@ jobs:
         run: |
           cd backend
           python manage.py test
+          coverage html
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: htmlcov
+          path: backend/htmlcov/**
+          retention-days: 5
